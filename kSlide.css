@@ -1,0 +1,115 @@
+.kSlide {
+    position: relative;
+}
+
+.kSlide_wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.kSlide_box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.kSlide_box li img {
+    display: block;
+    width: 100%;
+}
+
+/* fade */
+.kSlide .fade li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .5s;
+    width: 100%;
+    height: 100%;
+}
+
+.kSlide .fade .on {
+    opacity: 1;
+    z-index: 20;
+}
+
+/* slide */
+.kSlide .slide {
+    overflow: hidden;
+}
+
+.kSlide .slide .kSlide_box {
+    width: 300%;
+    overflow: hidden;
+}
+
+.kSlide .slide .kSlide_box li {
+    float: left;
+    height: 100%;
+}
+
+.kSlide .thumb_img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+}
+
+/* controls */
+.KSlide_controls .kSlide_direction .direction_btns {
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    width: 40px;
+    height: 40px;
+    text-indent: -9999px;
+    z-index: 99;
+    background-color: #000;
+    background-image: url(/resources/service/images/rtn/ico_corp.png);
+    -webkit-background-size: 350px 350px;
+    background-size: 350px 350px;
+}
+.KSlide_controls .kSlide_direction .direction_prev {
+    left: 0;
+    background-position: -143px -147px
+}
+.KSlide_controls .kSlide_direction .direction_next {
+    right: 0;
+    background-position: -192px -147px;
+}
+.KSlide_controls .page_txt {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    color: #fff;
+    font-weight: bold;
+    z-index: 99;
+}
+
+.has_disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
+
+/* pc 슬라이드 설명문구*/
+.wrap_explain {
+    position: absolute;
+    z-index: 10;
+    padding: 0 80px;
+    z-index: 99;
+}
+.wrap_explain .desc_g {
+    color: #1e1e1e;
+    padding-top: 118px;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 48px;
+}
+.wrap_explain .btn_step {
+    margin-top: 31px;
+}
+
+
