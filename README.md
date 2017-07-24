@@ -1,7 +1,9 @@
 # kSlide
 ```
+# 마크업
 <div id="slide" class="kSlide"></div>
-
+```
+```
 $('#slide').kSlide({
   "images": [
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVuc08y2D-kGnN0hvaA115j5lbhSz6erQsKXte8fQsbh5B1Jq-hw',
