@@ -1,8 +1,10 @@
 # kSlide
-```
+
 ## 마크업
+```
 <div id="slide" class="kSlide"></div>
 ```
+## 사용법
 ```
 $('#slide').kSlide({
   "images": [
