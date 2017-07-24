@@ -1,6 +1,6 @@
 # kSlide
 ```
-# 마크업
+## 마크업
 <div id="slide" class="kSlide"></div>
 ```
 ```
