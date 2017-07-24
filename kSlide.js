@@ -63,7 +63,7 @@
             cssPrefix = '-' + cssPrefix + '-';
         }
         return cssPrefix;
-    };
+    }
 
     $.fn.kSlide = function(options) {
         var defaults = {
@@ -261,7 +261,7 @@
 
             function onSnap() {
                 var $el = $(self);
-                var defaultX, speedX, movedX, currentX;
+                var defaultX, defaultY, speedX, positionMovedX, offsetMovedX, offsetMovedY, currentX;
                 // 마우스다운시 위치값, 마우스무브시 이동 슬라이드 가로 비례값, 마우스무브시 이동값, 현재 transformX 값
                 var slideWidth = settings.useTransition ? 100 / 3 : 100;
 
@@ -269,16 +269,22 @@
                     if(!isBindingTransition) {
                         isMouseDown = true;
                         defaultX = e.clientX || e.originalEvent.touches[0].clientX;
+                        defaultY = e.clientY || e.originalEvent.touches[0].clientY;
                     }
                 });
 
                 $el.on('mousemove touchmove', function(e) {
+                    if(!(Math.abs(defaultY - (e.clientY || e.originalEvent.touches[0].clientY)) >= Math.abs(defaultX - (e.clientX || e.originalEvent.touches[0].clientX)))) {
+                        e.preventDefault();
+                    }
                     if(isMouseDown) {
                         isMouseMove = true;
                         speedX = slideWidth / $(this).width();
-                        movedX = ((e.clientX || e.originalEvent.touches[0].clientX) - defaultX) * speedX;
-                        currentX = slideWidth - movedX;
-                        if(settings.type === 'slide') {
+                        offsetMovedX = e.clientX || e.originalEvent.touches[0].clientX;
+                        offsetMovedY = e.clientY || e.originalEvent.touches[0].clientY;
+                        positionMovedX = (offsetMovedX - defaultX) * speedX;
+                        currentX = slideWidth - positionMovedX;
+                        if(settings.type === 'slide' && (defaultY < offsetMovedY + 20 && defaultY > offsetMovedY - 20)) {
                             if(settings.useTransition) {
                                 $slideBox.css(cssPrefix + 'transform', settings.useTransform3d ? 'translate3d(-' + currentX + '%, 0, 0)' : 'translate(-' + currentX + '%, 0)');
                             } else {
@@ -290,10 +296,16 @@
 
                 $el.on('mouseleave mouseup touchend', function(e) {
                     if(isMouseDown && isMouseMove) {
-                        if(slideWidth > currentX) {
+                        if(slideWidth > currentX + 5) {
                             clickedDirection('prev');
-                        } else {
+                        } else if(slideWidth < currentX - 5) {
                             clickedDirection('next');
+                        } else {
+                            if(settings.type === 'slide') {
+                                clickedDirection();
+                            } else {
+                                isMouseDown = false;
+                            }
                         }
                     } else {
                         isMouseDown = false;
