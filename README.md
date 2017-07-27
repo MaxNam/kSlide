@@ -2,7 +2,7 @@
 
 ## 마크업
 ```
-<div id="slide" class="kSlide"></div>
+<div id="slide" class="kSlide wrap_slide"></div>
 ```
 ## 사용법
 ```
