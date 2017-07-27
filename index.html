@@ -29,7 +29,7 @@ table{border-spacing:0}
 <link rel="stylesheet" type="text/css" href="./kSlide.css">
 </head>
 <body>
-<div id="slide" class="kSlide"></div>
+<div id="slide" class="wrap_slide main_slide"></div>
 
 <div id="slide2" class="kSlide"></div>
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -52,7 +52,7 @@ table{border-spacing:0}
       "useAutoChange": false,
       "useResponsive": false,
       "useSnap": true,
-      "type": "slide", //slide, fade
+      "type": "fade", //slide, fade
       "changedCallback": function(self, pageIndex) {
         console.log('pageIndex===', pageIndex);
       }

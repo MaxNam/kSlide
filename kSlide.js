@@ -98,9 +98,9 @@
 
         return this.each(function() {
             var self = this;
-            var $slideWrap = $('<div class="kSlide_wrapper '+ settings.type +'"></div>');
-            var $slideBox = $('<ul class="kSlide_box"></ul>');
-            var $controlBox = $('<div class="KSlide_controls"></div>');
+            $(this).addClass(settings.type);
+            var $slideBox = $('<ul class="list_slide"></ul>');
+            var $controlBox = $(document.createDocumentFragment());
             var $slideList = $slideBox.find('li');
             var changeTimer = null;
             var pageIndex = 1;
@@ -111,8 +111,7 @@
             var isBindingTransition = false;
             $(self).css({
                 "width": settings.useResponsive ? '' : settings.width,
-                "height": settings.height,
-                "padding-bottom": settings.type === 'fade' && settings.useResponsive ? "55%" : 0
+                "height": settings.height
             });
 // render ----
             // 전체 render
@@ -121,8 +120,8 @@
                 if(settings.useTool) {
                     renderControls();
                 }
-                $slideWrap.append($slideBox);
-                $(self).append($slideWrap);
+                // $slideWrap.append($slideBox);
+                $(self).append($slideBox);
                 $(self).append($controlBox);
 
                 if(settings.changedCallback && typeof settings.changedCallback === 'function') {
@@ -141,7 +140,7 @@
                             $img.css({ "width": settings.imgWidth, "height": settings.imgHeight, "margin": "35px auto 0" });
                         }
                     } else {
-                        var $img = i ? $('<div class="thumb_img" style="background-image: url(' + settings.images[i - 1] + ')"></div>') : $('<div class="thumb_img" style="background-image: url(' + settings.images[settings.images.length - 1] + ')"></div>');
+                        var $img = i ? $('<div class="thumb_slide" style="background-image: url(' + settings.images[i - 1] + ')"></div>') : $('<div class="thumb_slide" style="background-image: url(' + settings.images[settings.images.length - 1] + ')"></div>');
                     }
 
                     if(i === 1) {
@@ -154,14 +153,12 @@
 
             // tool render
             function renderControls() {
-                var $directionBox = $('<div class="kSlide_direction"></div>');
-                var $prevBtn = $('<button class="direction_btns direction_prev">Prev</button>');
-                var $nextBtn = $('<button class="direction_btns direction_next">Next</button>');
-                var $pageNumber = $('<span class="page_txt">' + pageIndex + ' / ' + settings.images.length + '</span>');
-                $directionBox.append($prevBtn);
-                $directionBox.append($nextBtn);
-                $directionBox.append($pageNumber);
-                $controlBox.append($directionBox);
+                var $prevBtn = $('<button class="btn_page btn_prev"><span class="ico_corp ico_prev">이전</span></button>');
+                var $nextBtn = $('<button class="btn_page btn_next"><span class="ico_corp ico_next">다음</span></button>');
+                var $pageNumber = $('<div class="info_page page_white"><span class="screen_out">현재 페이지</span><strong class="num_page">' + pageIndex + '</strong>/' + settings.images.length + '</div>');
+                $controlBox.append($prevBtn);
+                $controlBox.append($nextBtn);
+                $controlBox.append($pageNumber);
             }
 
             // 애니메이션 끝나고 다시 그림
@@ -179,7 +176,7 @@
                 }
 
                 renderImages();
-                $(self).find('.page_txt').html(pageIndex + ' / ' + settings.images.length);
+                $(self).find('.num_page').html(pageIndex);
 
                 if(settings.changedCallback && typeof settings.changedCallback === 'function') {
                     settings.changedCallback(self, pageIndex);
@@ -244,12 +241,12 @@
             // 이벤트들
             function bindEvents() {
                 var $el = $(self);
-                $el.find('.direction_prev').on('click', function(e) {
+                $el.find('.btn_prev').on('click', function(e) {
                     e.preventDefault();
                     clickedDirection('prev');
                 });
 
-                $el.find('.direction_next').on('click', function(e) {
+                $el.find('.btn_next').on('click', function(e) {
                     e.preventDefault();
                     clickedDirection('next');
                 });
@@ -330,11 +327,11 @@
             }
 
             function disabledBtns() {
-                $(self).find('.direction_btns').addClass('has_disabled');
+                $(self).find('.btn_page').addClass('has_disabled');
             }
 
             function abledBtns() {
-                $(self).find('.direction_btns').removeClass('has_disabled');
+                $(self).find('.btn_page').removeClass('has_disabled');
             }
 
             function clearTimer() {
