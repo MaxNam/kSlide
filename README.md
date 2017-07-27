@@ -59,4 +59,7 @@ $('#slide').kSlide({
  imgWidth(Number,String) - 이미지 사이즈만 따로 조정 (img tag 사용) width는 배경 (색이 들어감) (default: 0)
  
  imgHeight(Number,String) - 이미지 사이즈만 따로 조정 (img tag 사용) height는 배경 (색이 들어감) (default: 0)
+
 ```
+## imgWidth,imgHeight 예
+![screenshot](https://github.com/MaxNam/kSlide/blob/master/img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202017-07-24%20%EC%98%A4%EC%A0%84%2011.37.26.png)
