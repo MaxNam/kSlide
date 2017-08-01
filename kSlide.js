@@ -139,8 +139,7 @@
                         var $thumbSlide = $('<div class="thumb_slide"></div>');
                         var $imgThumb = i ? $('<img class="img_thumb" src="'+ settings.images[i - 1] + '">') : $('<img class="img_thumb" src="' + settings.images[settings.images.length - 1] + '">');
                         if(settings.imgWidth || settings.imgHeight) {
-                            $thumbSlide.css({ "line-height": settings.height + 'px', "text-align": "center" });
-                            $imgThumb.css({ "display": "inline", "height": settings.imgHeight, "vertical-align": "middle" });
+                            $imgThumb.css({ "height": settings.imgHeight, "padding": (settings.height - settings.imgHeight) / 2 });
                         }
                         $thumbSlide.append($imgThumb);
                     } else {
