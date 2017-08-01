@@ -56,6 +56,9 @@ $('#slide').kSlide({
  
  changedCallback(function) - 해당 컴포넌트 rendering 끝나고 callback함수
  
+ 
+ // 배경색 + 이미지 타입
+ 
  imgWidth(Number,String) - 이미지 사이즈만 따로 조정 (img tag 사용) width는 배경 (색이 들어감) (default: 0)
  
  imgHeight(Number,String) - 이미지 사이즈만 따로 조정 (img tag 사용) height는 배경 (색이 들어감) (default: 0)
