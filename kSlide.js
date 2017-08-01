@@ -99,6 +99,7 @@
         return this.each(function() {
             var self = this;
             $(this).addClass(settings.type);
+            var $slideWrap = $('<div class="list_wrap"></div>')
             var $slideBox = $('<ul class="list_slide"></ul>');
             var $controlBox = $(document.createDocumentFragment());
             var $slideList = $slideBox.find('li');
@@ -120,8 +121,8 @@
                 if(settings.useTool) {
                     renderControls();
                 }
-                // $slideWrap.append($slideBox);
-                $(self).append($slideBox);
+                $slideWrap.append($slideBox);
+                $(self).append($slideWrap);
                 $(self).append($controlBox);
 
                 if(settings.changedCallback && typeof settings.changedCallback === 'function') {
@@ -135,18 +136,21 @@
                 for(var i = 0; i < 3; i++) {
                     var $li = $('<li></li>');
                     if(settings.useResponsive || settings.imgWidth || settings.imgHeight) {
-                        var $img = i ? $('<img src="'+ settings.images[i - 1] + '">') : $('<img src="' + settings.images[settings.images.length - 1] + '">');
+                        var $thumbSlide = $('<div class="thumb_slide"></div>');
+                        var $imgThumb = i ? $('<img class="img_thumb" src="'+ settings.images[i - 1] + '">') : $('<img class="img_thumb" src="' + settings.images[settings.images.length - 1] + '">');
                         if(settings.imgWidth || settings.imgHeight) {
-                            $img.css({ "width": settings.imgWidth, "height": settings.imgHeight, "margin": "35px auto 0" });
+                            $thumbSlide.css({ "line-height": settings.height + 'px', "text-align": "center" });
+                            $imgThumb.css({ "display": "inline", "height": settings.imgHeight, "vertical-align": "middle" });
                         }
+                        $thumbSlide.append($imgThumb);
                     } else {
-                        var $img = i ? $('<div class="thumb_slide" style="background-image: url(' + settings.images[i - 1] + ')"></div>') : $('<div class="thumb_slide" style="background-image: url(' + settings.images[settings.images.length - 1] + ')"></div>');
+                        var $thumbSlide = i ? $('<div class="thumb_slide" style="background-image: url(' + settings.images[i - 1] + ')"></div>') : $('<div class="thumb_slide" style="background-image: url(' + settings.images[settings.images.length - 1] + ')"></div>');
                     }
 
                     if(i === 1) {
                         $li.addClass('on');
                     }
-                    $li.append($img)
+                    $li.append($thumbSlide)
                     $slideBox.append($li);
                 }
             }

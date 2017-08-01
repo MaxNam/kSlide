@@ -1535,15 +1535,18 @@ only screen and (min-device-pixel-ratio: 1.5){
 
 /* 2017-07-21 추가 종료 */
 
-
-
 /* 슬라이드 */
+.wrap_slide .list_wrap {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
 .wrap_slide .list_slide img {
     display: block;
-    width: 100%;
+    /*width: 100%;*/
 }
 .wrap_slide .list_slide .thumb_slide {
-    position: static;
+    position: absolute;
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -1559,16 +1562,26 @@ only screen and (min-device-pixel-ratio: 1.5){
     z-index: 20;
 }
 
+.main_slide .list_slide,
+.svctop_slide .list_slide,
+.svc_slide .list_slide
+{
+    padding-top:0
+}
+
 /* slide */
 .slide .list_slide {
     width: 300%;
     height: 100%;
-    overflow: hidden;
 }
 
 .slide .list_slide li {
     float: left;
     height: 100%;
+}
+
+.slide .list_slide .thumb_slide {
+    position: static;
 }
 
 /* fade */
@@ -1594,7 +1607,14 @@ only screen and (min-device-pixel-ratio: 1.5){
     z-index: 20;
 }
 
-.fade .list_slide{padding-top:56.25%}/* 2017-07-03 */
+/* fade */
+.svcFade .list_slide {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/*.fade .list_slide{padding-top:56.25%}!* 2017-07-03 *!*/
 
 .has_disabled {
     pointer-events: none;
