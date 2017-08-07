@@ -22,7 +22,7 @@ $('#slide').kSlide({
   "useAutoChange": false,
   "useResponsive": false,
   "useSnap": true,
-  "type": "slide", //slide, fade
+  "type": "fade", //slide, fade
   "changedCallback": function(self, pageIndex) {
     console.log('pageIndex===', pageIndex);
   }
