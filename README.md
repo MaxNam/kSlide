@@ -22,7 +22,7 @@ $('#slide').kSlide({
   "useAutoChange": false,
   "useResponsive": false,
   "useSnap": true,
-  "type": "slide", //slide, fade
+  "type": "fade", //slide, fade
   "changedCallback": function(self, pageIndex) {
     console.log('pageIndex===', pageIndex);
   }
@@ -34,7 +34,7 @@ $('#slide').kSlide({
 ```
  images(Array) - 이미지 url
  
- type(String) - 이미지 타입 (fade, slide) (default: 'slide')
+ type(String) - 이미지 타입 (fade, slide) (default: 'fade')
  
  width(Number, String) - 이미지 width 값 (default: 100%)
  
