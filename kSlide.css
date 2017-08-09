@@ -39,8 +39,9 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
 body{background-color:#1e1e1e}
 .open_head{display:none}
 #kakaoWrap{position:relative;min-width:1280px;background-color:#fff}
-#kakaoContent{padding-top:122px}
-#kakaoHead{position:fixed;z-index:100;top:0;left:0;width:100%;min-width:1280px;border-bottom:1px solid #e5e5e5;background-color:#fff}
+#kakaoContent{padding-top:61px}
+#kakaoHead{z-index:100;top:0;left:0;width:100%;min-width:1280px;border-bottom:1px solid #e5e5e5;background-color:#fff}
+.kakaoHead-menu-sticky .box_info {position:fixed;top:0;width:100%;z-index: 101;}
 #mArticle{position:relative;width:1160px;margin:0 auto;padding-bottom:180px}
 .kakao_type2{background-color:#fff}
 .kakao_type2 #kakaoContent{padding-top:0}
@@ -64,17 +65,19 @@ body{background-color:#1e1e1e}
 /* #kakaoGnb .list_gnb > li.on .link_talent .ico_arr{display:block} KAKAOCORP-10 삭제 */
 
 .list_gnb .on .box_sub{display:block}
-.list_gnb .box_sub{display:none;position:absolute;z-index:5;top:61px;left:0;width:100%;border-bottom:1px solid #d4d4d4;background-color:#fff}/* KAKAOCORP-10 */
-.list_gnb .box_sub .list_sub{display:inline-block;width:1160px;height:100%;padding:52px 1px 60px 0;vertical-align:top;box-sizing:border-box}/* KAKAOCORP-10 */
+.list_gnb .box_sub{display:none;position:absolute;z-index:102;top:61px;left:0;width:100%;border-bottom:1px solid #d4d4d4;background-color:#fff}/* KAKAOCORP-10 */
+.list_gnb .box_sub .list_sub{display:inline-block;width:1160px;height:100%;padding:57px 1px 60px 0;vertical-align:top;box-sizing:border-box}/* KAKAOCORP-120 */ /* KAKAOCORP-10 */
 .list_gnb .box_sub .list_sub li{float:left;padding:0 20px;text-align:center;height:100%;box-sizing:border-box}/* KAKAOCORP-10 */
 /* KAKAOCORP-10 추가 시작 */
-.list_gnb .sub_type1 .list_sub{background:url(/resources/service/images/gnb_line_type1.gif) repeat-y 0 0}
+.list_gnb .sub_type1 .list_sub{background:url(http://t1.kakaocdn.net/kakaocorp/pw/gnb_line_type1.gif) repeat-y 0 0}/* KAKAOCORP-51 */
 .list_gnb .sub_type1 .list_sub li{width:16.66%}
-.list_gnb .sub_type2 .list_sub{background:url(/resources/service/images/gnb_line_type2.gif) repeat-y 0 0}
+.list_gnb .sub_type2 .list_sub{background:url(http://t1.kakaocdn.net/kakaocorp/pw/gnb_line_type2.gif) repeat-y 0 0}/* KAKAOCORP-51 */
 .list_gnb .sub_type2 .list_sub li{width:12.5%}
-.list_gnb .sub_type3 .list_sub{background:url(/resources/service/images/gnb_line_type3.gif) repeat-y 0 0}
+html:lang(en) .list_gnb .sub_type2 .list_sub{background:url(/resources/service/images/gnb_line_type2_1.gif) repeat-y 0 0} /* 2017-08-05 추가 */
+html:lang(en) .list_gnb .sub_type2 .list_sub li{width:14.28%} /* 2017-08-05 추가 */
+.list_gnb .sub_type3 .list_sub{background:url(http://t1.kakaocdn.net/kakaocorp/pw/gnb_line_type3.gif) repeat-y 0 0}/* KAKAOCORP-51 */
 .list_gnb .sub_type3 .list_sub li{width:12.5%}
-.list_gnb .sub_type4 .list_sub{background:url(/resources/service/images/gnb_line_type4.gif) repeat-y 0 0}
+.list_gnb .sub_type4 .list_sub{background:url(http://t1.kakaocdn.net/kakaocorp/pw/gnb_line_type4.gif) repeat-y 0 0}/* KAKAOCORP-51 */
 .list_gnb .sub_type4 .list_sub li{width:33.3%}
 /* KAKAOCORP-10 추가 끝 */
 .list_gnb .box_sub .list_sub .link_sub{display:block;padding:6px 0;font-size:13px;line-height:18px;color:#666;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif;text-decoration:none}/* KAKAOCORP-95 */
@@ -85,8 +88,8 @@ body{background-color:#1e1e1e}
 .list_gnb .box_sub .list_sub .link_sub.on .ico_new,
 .list_gnb .box_sub .list_sub .link_sub:hover .ico_new,
 .list_gnb .box_sub .list_sub .link_sub:focus .ico_new{border-bottom:0 none}
-.list_gnb .box_sub .list_sub .tit_sub{display:block;padding-bottom:13px}/* KAKAOCORP-10 */
-.list_gnb .box_sub .list_sub .tit_sub .link_sub{padding:0;font-size:14px;line-height:30px;color:#1e1e1e}/* KAKAOCORP-10 */
+.list_gnb .box_sub .list_sub .tit_sub{display:block;padding-bottom:18px}/* KAKAOCORP-120 */ /* KAKAOCORP-10 */
+.list_gnb .box_sub .list_sub .tit_sub .link_sub{padding:0;font-size:14px;line-height:20px;color:#1e1e1e}/* KAKAOCORP-120 */ /* KAKAOCORP-10 */
 .list_gnb .box_sub .list_sub .tit_sub .link_sub:hover span{border-color:#1e1e1e}
 .list_lang{float:right;margin-top:17px}
 .list_lang li{float:left;margin-left:15px}
@@ -142,10 +145,11 @@ body{background-color:#1e1e1e}
 .foot_kakao .info_copyright{float:left}
 .foot_kakao .dlnk_info{margin-right:8px;font-size:12px;color:#aeaeae;text-decoration:none}
 .foot_kakao .dlnk_info:hover{font-weight:bold;color:#fff}
+html:lang(en) .foot_kakao .dlnk_info:hover{text-decoration:underline;font-weight:normal} /* 2017-08-05 */
 .foot_kakao .dlnk_info .dlnk_txt{color:#fff} /* 2017-06-30 */
 .foot_kakao .ico_new{width:11px;height:11px;margin:6px 0 0 3px;background-position:-100px -50px} /* 2017-07-14 */
 .foot_kakao .dlnk_kakao:hover{border-color:#1e1e1e}
-.foot_kakao .txt_copyright{display:block;padding-top:2px;font-size:12px;color:#aeaeae}
+.foot_kakao .txt_copyright{display:block;padding-top:2px;font-size:12px;color:#aeaeae;clear:both;content:'';}/* 2017-08-05 */
 .foot_kakao .link_kakao{color:#aeaeae}
 .foot_kakao .link_kakao:hover{text-decoration:underline}
 /* 관련사이트 */
@@ -182,20 +186,21 @@ body{background-color:#1e1e1e}
 
 /* 셀렉트박스 */
 .opt_comm{float:left;position:relative;border-bottom:1px solid #4d4d4d}
-.opt_comm .link_selected{display:block;overflow:hidden;position:relative;height:32px;padding:2px 20px 0 0;font-weight:bold;font-size:18px;color:#1e1e1e;text-decoration:none}
+.opt_comm .link_selected{display:block;overflow:hidden;position:relative;height:32px;padding:2px 20px 0 0;font-weight:bold;font-size:18px;color:#1e1e1e;text-decoration:none;background-color:#fff}
 .opt_comm .link_selected .ico_arrow{position:absolute;top:11px;right:0;width:12px;height:8px;background-position:0 -20px}
 .opt_comm .box_opt{display:none;overflow:hidden;position:absolute;top:34px;left:0;right:0;width:auto;max-height:146px;border:1px solid #4d4d4d;background:#fff}
 .opt_comm .inner_opt{overflow-x:hidden;overflow-y:auto;width:100%;max-height:136px;margin:5px 0;padding-right:20px} /* 2017-06-30 */
-.opt_comm .list_opt{position:relative;width:164px}
+.opt_comm .list_opt{position:relative}
 .opt_comm .list_opt li{padding:5px 0 5px 15px}
 .opt_comm .list_opt .link_option{display:block;color:#666;/* white-space:nowrap */}
 .opt_comm .list_opt .link_option:hover{color:#1e1e1e}
-.opt_comm .scroll_bar{display:none;overflow:hidden;position:absolute;right:0px;top:3px;height:140px} /* 2017-06-30 */
+.opt_comm .scroll_bar{display:none;overflow:hidden;position:absolute;right:0px;top:3px;bottom:3px}/* KAKAOCORP-136 */ /* 2017-06-30 */
 .opt_comm .scroll_bar .bg_bar{display:block;position:relative;width:5px;background-color:#1e1e1e}   /* 2017-06-30 */
 .opt_comm2{float:none;border:0 none}
 .opt_comm2 .link_selected{height:38px;padding:0 20px 0 10px;font-weight:normal;font-size:16px;line-height:38px;border:1px solid #d4d4d4}
 .opt_comm2 .link_selected .ico_arrow{top:16px;right:9px}
-.opt_comm2 .box_opt{top:39px;border-color:#d4d4d4}
+.opt_comm2 .box_opt{top:39px;max-height:190px;border-color:#d4d4d4}/* KAKAOCORP-136 */
+.opt_comm2 .inner_opt{max-height:180px}/* KAKAOCORP-136 */
 .opt_comm2 .list_opt li{padding:5px 10px}
 .opt_open{z-index:10}
 .opt_open .link_selected .ico_arrow{background-position:-20px -20px}
@@ -312,7 +317,7 @@ button.btn_offer{width:190px;height:70px}
 .wrap_tab .list_tab{overflow:hidden}
 .wrap_tab .list_tab li{float:left;margin-right:38px}
 .wrap_tab .list_tab .link_tab{display:block;font-size:20px;line-height:30px;color:#666;text-decoration:none}
-.wrap_tab .list_tab .on .link_tab, .wrap_tab .list_tab .link_tab:hover{border-bottom:1px solid #4d4d4d;color:#1e1e1e}
+.wrap_tab .list_tab .on .link_tab, .wrap_tab .list_tab .link_tab:hover{border-bottom:1px solid #4d4d4d;font-weight:bold;color:#1e1e1e}/* KAKAOCORP-59 */
 .wrap_tab .ico_arr{width:18px;height:18px;margin:4px 0 0 5px;background-position:-252px -22px}
 .tit_intro + .wrap_tab{padding-top:100px}
 .desc_intro + .wrap_tab{padding-top:90px}
@@ -320,14 +325,14 @@ button.btn_offer{width:190px;height:70px}
 .wrap_slide + .wrap_tab{padding-top:32px}
 
 /* 세로탭 */
-.list_vertical{float:left;width:300px;padding-top:74px}
+.list_vertical{float:left;width:262px;padding-top:74px}/* KAKAOCORP-153 */
 .list_vertical.tab_fix{position:fixed;top:116px;padding-top:0}
 .list_vertical li{margin-bottom:18px}
 .list_vertical .link_tab{line-height:26px;color:#1e1e1e;text-decoration:none;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif} /* 2017-06-30 */
 .list_vertical .on .link_tab, .list_vertical .link_tab:hover{border-bottom:1px solid #4d4d4d;font-weight:bold}
-.vertical_type2{padding-top:96px}
+/* .vertical_type2{padding-top:96px}
 .vertical_type2.tab_fix{top:115px}
-.vertical_type2 li{margin-bottom:21px}
+.vertical_type2 li{margin-bottom:21px} KAKAOCORP-153 삭제 */
 .vertical_type3 .link_tab{font-size:18px}
 
 /* 개인정보 수집 및 이용동의 */
@@ -339,16 +344,14 @@ button.btn_offer{width:190px;height:70px}
 .box_agree .chk_box{height:60px;padding:0 20px;border-top:1px solid #d4d4d4;line-height:60px;text-align:right}
 
 /* 테이블 */
-.tbl_comm{overflow:hidden;width:860px;margin-top:80px;border-top:2px solid #4d4d4d}
+.tbl_comm{width:860px;margin-top:80px;border-top:2px solid #4d4d4d}
 .subject_corp + .tbl_comm{margin-top:16px}
 .tit_subject + .tbl_comm{margin-top:16px}
 .info_head + .tbl_comm{margin-top:54px}
-/* .tbl_comm.fst{margin-top:80px} */
 .tbl{width:100%;border-collapse:collapse;border-spacing:0;table-layout:fixed}
 .tbl th{border-left:1px solid #e6e6e6;border-bottom:1px solid #e6e6e6;font-weight:normal;font-size:14px;word-break:break-all}
 .tbl td{border-left:1px solid #e6e6e6;border-bottom:1px solid #e6e6e6;font-size:14px;line-height:26px;text-align:center;word-break:break-all}
 .tbl thead th{padding:15px 20px;color:#1e1e1e;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif}
-/* .tbl .mid_align{vertical-align:middle} */
 .tbl .inner_cell{padding:15px 20px 14px;word-break:break-all}
 .tbl .inner_cell .btn_step{margin:0}
 .tbl .fst{border-left:0 none}
@@ -386,35 +389,39 @@ button.btn_offer{width:190px;height:70px}
 
 .wrap_cont{overflow:visible;position:relative;width:1160px;margin:0 auto;clear:both;*zoom:1}
 .wrap_cont:after{display:block;visibility:hidden;height:0;font-size:0;clear:both;content:''}
-.tit_intro + .wrap_cont{margin-top:16px} /* 2017-06-30 */
+/* .tit_intro + .wrap_cont{margin-top:16px} KAKAOCORP-59 삭제 */ /* 2017-06-30 */
 .area_tit{float:left;width:300px}
 .area_tit .tit_corp{display:block;padding:76px 40px 0 0;font-size:18px;line-height:30px;color:#1e1e1e;vertical-align:top} /* 2017-06-30 */
-.tit_intro + .wrap_cont .tit_corp{padding-top:56px}
+.tit_intro + .wrap_cont .tit_corp{padding-top:87px} /* 2017-07-14 */
 .area_tit .desc_date{display:block;padding-top:10px}
 .area_tit .tit_info{display:block;font-size:18px;line-height:30px;color:#1e1e1e}
-.area_cont .subject_corp{display:block;padding-top:74px;font-size:18px;line-height:28px;color:#1e1e1e}   /* 2017-06-30 */
+.area_cont .subject_corp{display:block;padding-top:74px;font-size:18px;line-height:28px;color:#1e1e1e} /* 2017-06-30 */
+.tit_intro + .wrap_cont .area_tit + .area_cont .subject_corp{padding-top:87px}/* KAKAOCORP-59 추가 */
 .wrap_tab + .wrap_cont .area_cont .subject_corp{padding-top:58px}
-.wrap_cont + .wrap_cont .area_cont .subject_corp{padding-top:80px}
+.wrap_cont + .wrap_cont .area_cont .subject_corp{padding-top:56px}
+.wrap_cont + .wrap_cont .area_cont .subject_report{padding-top:80px}/* KAKAOCORP-59 추가 */
 .area_cont .desc_info{padding-top:56px;line-height:26px}
+.area_cont .desc_info.fst{padding-top:87px}/* KAKAOCORP-59 */
 .area_cont .thumb_g + .desc_info{padding-top:24px} /* 2017-06-30 */
-.wrap_cont + .wrap_cont .desc_info{padding-top:56px}/* 2017-06-30 */
+/* .wrap_cont + .wrap_cont .desc_info{padding-top:56px} KAKAOCORP-59 삭제 */ /* 2017-06-30 */
 .wrap_cont + .wrap_cont .subject_corp + .desc_info{padding-top:30px}
-.wrap_cont .area_cont .subject_corp + .desc_info{padding-top:13px;line-height:25px} /* 2017-06-30 */
+.wrap_cont .area_cont .subject_corp + .desc_info{padding-top:20px} /* KAKAOCORP-59 */ /* 2017-06-30 */
 .tit_subject{display:block;padding-top:40px;line-height:28px;color:#1e1e1e}
 .tit_subject2{font-weight:bold}
 
 .area_cont{float:right;width:860px}
 .area_cont + .area_cont .subject_corp{padding-top:54px}/* 2017-06-30 */
 .area_cont + .area_cont2 .subject_corp{padding-top:74px} /* 2017-06-30 */
-.area_cont .txt_standard{padding-top:12px;font-size:12px;line-height:22px;/*text-align:right*/} /* 2017-06-30 */
+.area_cont .txt_standard{padding-top:12px;font-size:12px;line-height:22px} /* 2017-06-30 */
 /* .list_level + .txt_standard{text-align:left} */
 .area_cont .desc_txt{padding-top:78px;line-height:26px} /* 2017-06-30 */
-.tit_intro + .wrap_cont .desc_txt{padding-top:58px} /* 2017-06-30 추가 */
+.tit_intro + .wrap_cont .desc_txt{padding-top:87px} /* KAKAOCORP-59 */ /* 2017-06-30 추가 */
 /* .wrap_cont + .wrap_cont .area_tit{margin-top:60px} */
 .wrap_cont + .wrap_cont{margin-top:60px}
 .wrap_cont + .wrap_cont .tit_corp{padding-top:56px} /* 2017-06-30 */
-.wrap_cont + .wrap_cont2 .tit_corp{padding-top:75px} /* 2017-06-30 추가 */
-.wrap_cont + .wrap_cont .tit_corp2{padding-top:99px}
+.wrap_cont + .wrap_cont .tit_voices{padding-top:76px}/* KAKAOCORP-59 추가 */
+/* .wrap_cont + .wrap_cont2 .tit_corp{padding-top:75px} KAKAOCORP-59 삭제 */ /* 2017-06-30 추가 */
+/* .wrap_cont + .wrap_cont .tit_corp2{padding-top:99px} KAKAOCORP-59 삭제 */
 .wrap_cont + .wrap_cont2 .area_tit + .area_cont{border-top:0 none}
 .wrap_cont + .wrap_cont .area_cont{border-top:1px solid #e6e6e6}
 .wrap_cont + .wrap_cont2{margin-top:0}
@@ -433,7 +440,6 @@ button.btn_offer{width:190px;height:70px}
 .cont_invest .btn_func{position:absolute;top:36px;right:0}
 .area_cont .pack_txt{overflow:hidden;padding-top:75px}
 .area_cont .pack_txt .tit_pack{display:block;font-weight:normal;font-size:26px;color:#1e1e1e}
-/* .area_cont .pack_txt .txt_pack{padding-top:10px} */
 .area_cont .pack_txt .txt_level{overflow:hidden;float:left;font-size:18px;line-height:28px;color:#1e1e1e}
 .area_cont .pack_txt .txt_aid{float:right;padding-top:6px;font-size:12px}
 
@@ -446,23 +452,18 @@ button.btn_offer{width:190px;height:70px}
 .level_type2 .item_level{width:160px}
 .level_type2 .inner_level{padding-left:53px;text-align:left}
 
-
 .pack_opt{width:100%;height:65px;padding-top:69px}
 .pack_opt .opt_comm{width:90px}
 .wrap_cont .pack_opt{float:left;width:300px;padding-top:48px}
 .wrap_cont .area_tit > .opt_comm{width:90px;margin-top:74px}
 .wrap_cont .area_tit .tit_corp + .opt_comm{float:left;margin-top:0}
 .wrap_cont + .wrap_cont .opt_comm{margin-top:80px}
-.wrap_tab + .wrap_cont .area_tit > .opt_comm{/*margin-top:45px*/;margin-top:74px}
+.wrap_tab + .wrap_cont .area_tit > .opt_comm{margin-top:74px}
 
-/* .area_cont .info_head{height:50px;padding:82px 0 22px}
-.area_cont .info_head .tit_info{overflow:hidden;float:left;padding-top:9px;font-weight:normal;font-size:26px;line-height:29px;color:#1e1e1e}
-.area_cont .info_head .btn_func{float:right;position:static;margin-top:8px}
-.area_cont .info_head + .tbl_comm{margin-top:0} */
 .area_cont .info_head{overflow:hidden}
 .area_cont .info_head .pack_head{float:left}
 .area_cont .info_head .btn_step{float:right;margin-top:80px}
-.wrap_cont .info_stock{float:left;width:860px;height:70px;padding-top:67px;color:#1e1e1e}
+.wrap_cont .info_stock{width:860px;height:70px;padding-top:67px;color:#1e1e1e}/* KAKAOCORP-136 */
 .info_stock + .tbl_comm{margin-top:0}
 .now_stock{float:left}
 .now_stock .num_stock{font-weight:bold;font-size:36px;line-height:45px}
@@ -472,7 +473,7 @@ button.btn_offer{width:190px;height:70px}
 .info_stock .desc_stock .txt_bar{display:inline-block;padding:0 8px 0 6px;color:#ccc}
 .info_stock .txt_date{float:right;margin-top:26px;font-size:12px;line-height:16px}
 .stock_up .num_stock{color:#ff0018}
-.stock_up .now_stock .ico_corp{width:17px;height:12px;margin-top:17px;background-position:-40px -20px}
+.stock_up .now_stock .ico_corp{width:17px;height:12px;margin-top:21px;background-position:-40px -20px} /* 2017-07-14 */
 .stock_up .desc_stock .ico_corp{display:inline-block;background-position:-70px -20px}
 .stock_down .num_stock{color:#003cff}
 .stock_down .now_stock .ico_corp{width:17px;height:12px;margin-top:21px;background-position:-40px 0}
@@ -486,14 +487,11 @@ button.btn_offer{width:190px;height:70px}
 .list_faq .answer_info{overflow:hidden;padding:30px 40px;border-top:1px solid #e6e6e6;line-height:26px;background-color:#f7f7f7}
 .list_faq .answer_info .ico_a{float:left;padding-right:8px}
 .list_faq .answer_info .txt_answer{float:left;width:758px;line-height:22px}
-.board_view{overflow:hidden;padding-top:75px}
-.board_view .view_body{padding-bottom:60px;border-bottom:1px solid #e5e5e5;line-height:26px}
-.board_view + .wrap_btn{padding-top:20px}
+.board_view{overflow:hidden;padding-top:75px}  /* KAKAOCORP-128 */
+.board_view .view_body{padding-bottom:60px;border-bottom:1px solid #e5e5e5;line-height:26px} /* KAKAOCORP-128 */
+.board_view + .wrap_btn{padding-top:20px} /* KAKAOCORP-128 */
 .view_body .news_thumb{display:block;width:860px;padding-bottom:40px}
 .view_body .txt_news{display:block;color:#1e1e1e;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif}
-/* .board_view .view_head{overflow:hidden;height:36px;padding:18px 40px 0;border-top:2px solid #4d4d4d;border-bottom:1px solid #e5e5e5}
-.board_view .view_head .tit_board{overflow:hidden;float:left;width:700px;font-weight:normal;color:#1e1e1e;white-space:nowrap;text-overflow:ellipsis}
-.board_view .view_head .txt_date{float:right;font-size:14px} */
 .area_provision{margin-top:80px;border-top:2px solid #4d4d4d;line-height:28px}
 .area_provision .group_g{overflow:hidden;padding-bottom:60px;border-bottom:1px solid #e6e6e6} /* 2017-06-30 */
 .area_provision .group_g + .group_g{border-top:0}
@@ -526,7 +524,6 @@ button.btn_offer{width:190px;height:70px}
 .list_tblinfo li{margin-bottom:4px;padding-left:12px;background:url(/resources/service/images/ico_dot.gif) no-repeat 0 10px}
 .list_tblinfo + .agree_info .tit_item{float:none;padding-top:0}
 .ico_mandatory{display:inline-block;width:4px;height:4px;margin:9px 3px 0;border-radius:2px;font-size:0;line-height:0;background-color:#eb0b00;text-indent:-9999px;vertical-align:top}
-/* .tbl_info + .wrap_btn, .list_tblinfo + .wrap_btn{padding-top:40px} */
 
 /* 슬라이드 */
 .wrap_slide{position:relative;overflow:hidden}
@@ -534,7 +531,7 @@ button.btn_offer{width:190px;height:70px}
 .wrap_slide .inner_slide{max-width:1760px;height:100%;margin:0 auto;padding:0 80px}
 .wrap_slide .list_slide .thumb_slide{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:50% 0;background-repeat:no-repeat;transition-duration:0ms;transition-timing-function:cubic-bezier(0.445, 0.05, 0.55, 0.95)}
 .wrap_slide .list_slide .desc_g{padding-top:118px;font-weight:bold;font-size:30px;line-height:48px;color:#fff}
-.wrap_slide .info_page{position:absolute;z-index:10;bottom:18px;left:0;right:0;font-weight:bold;color:#1e1e1e;text-align:right}
+.wrap_slide .info_page{position:absolute;z-index:20;bottom:18px;left:0;right:0;font-weight:bold;color:#1e1e1e;text-align:right}
 .wrap_slide .inner_page{max-width:1760px;margin:0 auto;padding:0 80px}
 .wrap_slide .page_white{color:#fff}
 .wrap_slide .total_page{position:absolute;bottom:20px;right:50px;font-weight:bold;font-size:16px;color:#fff}
@@ -546,7 +543,8 @@ button.btn_offer{width:190px;height:70px}
 .wrap_slide .slide_info{width:100%;height:100%}
 .wrap_slide .link_play{position:absolute;top:50%;left:50%;width:100px;height:100px;margin:-50px 0 0 -50px;background-position:0 -213px}
 .wrap_slide .txt_info{padding:80px 0 0 60px}
-.wrap_slide .txt_info .desc_subtop{padding-top:30px;font-weight:bold;font-size:30px;line-height:48px;color:#fff;text-shadow:1px 1px 1px #000}/* 2017-06-30 */
+.wrap_slide .txt_info .img_thumb{height:40px}/* KAKAOCORP-133 추가 */
+.wrap_slide .txt_info .desc_subtop{padding-top:30px;font-weight:bold;font-size:30px;line-height:48px;color:#fff;text-shadow:0 1px 1px #000}/* KAKAOCORP-133 */ /* 2017-06-30 */
 .wrap_slide .box_vod{display:none;width:100%;height:100%}
 .wrap_slide .video_slide{height:100%}
 .wrap_slide .video_slide .slide_info{background-color:#000}
@@ -554,7 +552,7 @@ button.btn_offer{width:190px;height:70px}
 .wrap_slide .video_slide .link_play{display:none}
 .wrap_slide .video_slide .txt_info{display:none}
 .wrap_slide .video_slide .box_vod{display:block}
-.wrap_slide .wrap_bnr{position:absolute;z-index:20;right:0;bottom:0;width:300px;height:272px}
+.wrap_slide .wrap_bnr{position:absolute;z-index:20;right:0;bottom:0;width:300px;height:143px}/* KAKAOCORP-200 */
 .wrap_slide .wrap_bnr .link_close{position:absolute;top:0;right:0;width:30px;height:30px}
 .wrap_slide .wrap_bnr .ico_close{width:20px;height:20px;margin:5px;background-position:-180px -40px} /* 2017-06-30 */
 .wrap_tab + .wrap_slide{margin-top:60px}
@@ -567,34 +565,28 @@ button.btn_offer{width:190px;height:70px}
 .wrap_slide .white_slide .desc_g{color:#1e1e1e}
 .wrap_slide .white_slide .btn_step{border-color:#1e1e1e}
 /* 카카오 */
-/* .kakao_slide{margin-top:52px} */
 .kakao_slide .info_page{right:20px} /* 2017-06-30 */
 /* 서비스 메인 */
 .svctop_slide{border-bottom:1px solid #e6e6e6}/* 2017-06-30 */
-.svctop_slide .list_slide{height:494px}/* 2017-06-30 */
+/* .svctop_slide .list_slide{height:494px} KAKAOCORP-123 삭제 *//* 2017-06-30 */
 .svctop_slide .btn_page{top:227px;margin:0}/* 2017-06-30 */
 .svctop_slide .info_page{top:460px;bottom:inherit}/* 2017-06-30 */
 .svctop_slide .inner_page{width:1160px}
 /* 서비스 상세 */
-/* .svc_slide{margin-top:-62px} */
-.svc_slide .list_slide{height:initial;padding-top:38.6%}/* 2017-06-30 */
+.svc_slide .list_slide{height:auto;padding-top:38.6%}/* 2017-06-30 */
 .svc_slide .inner_slide{position:relative;width:1280px;padding:0}
 .svc_slide .inner_page{width:1160px;padding:0}
 /* .svc_slide .btn_page{top:420px} 2017-06-30 삭제 */
-.feature_slide{width:860px;height:484px;margin:60px auto 0} /* 2017-06-30 */
+.feature_slide{width:860px;height:484px;margin:80px auto 0} /* KAKAOCORP-59 */ /* 2017-06-30 */
 .feature_slide .list_slide{height:484px}
 .feature_slide .info_page{right:20px}
 /* 소셜임팩트 */
-/* .cont_social .wrap_slide{margin-top:52px} */
-/* .cont_social .list_slide{height:400px} */
 .cont_social .wrap_slide .list_slide .thumb_slide{width:1160px}
 /* .cont_social .wrap_slide .info_page{bottom:25px;right:29px;font-size:18px} KAKAOCORP-56 삭제 */
 .kakao_slide + .wrap_cont .tit_corp, .kakao_slide + .wrap_cont .subject_corp, .kakao_slide + .wrap_cont .desc_info{padding-top:54px}
 
 
 /****************************** 메인 ******************************/
-
-
 /* layout */
 .kakao_type{background-color:#fff}
 #kakaoHead.head_type1, #kakaoHead.head_type3{border:0 none;background-color:transparent}
@@ -611,6 +603,8 @@ button.btn_offer{width:190px;height:70px}
 .kakao_type .foot_kakao .dlnk_info{color:#1e1e1e}
 .kakao_type .foot_kakao .txt_copyright{color:#1e1e1e}
 .kakao_type .foot_kakao .link_kakao{color:#1e1e1e}
+.kakao_type .foot_kakao .dlnk_info .dlnk_txt{color:#1e1e1e}
+.kakao_type .info_open .dlnk_info .ico_arr{background-position:-285px -25px}
 .kakao_type .relation_svc .link_tit{border-color:#1e1e1e;color:#1e1e1e}
 .kakao_type .relation_svc .link_tit .ico_arr{width:9px;height:9px}
 .kakao_type .relation_svc .link_tit .ico_arr{background-position:-143px -65px}
@@ -640,8 +634,6 @@ button.btn_offer{width:190px;height:70px}
 
 
 /****************************** 카카오 ******************************/
-
-
 /* 카카오 문화 */
 /* .kakao_about .area_cont{margin-top:50px;border-top:1px solid #e6e6e6} */
 /* .kakao_about .area_fst{margin-top:0;border-top:0 none} */
@@ -652,7 +644,7 @@ button.btn_offer{width:190px;height:70px}
 .culture_slide .info_page{right:29px}
 /* .item_info.item_info3{padding-top:60px} */
 .item_info.item_info3 .info_cont{width:220px;margin-left:100px}
-.item_info3 .info_cont .emph_tit{width:220px;height:220px;padding-top:95px;font-size:18px} /* 2017-06-30 */
+.item_info3 .info_cont .emph_tit{width:220px;height:220px;font-size:18px} /* 2017-06-30 */ /*KAKAOCORP-70 수정 */
 .item_info3 .info_cont .desc_cont{padding-top:24px;font-size:14px;line-height:24px;text-align:center}
 
 /* 걸어온 길 */
@@ -749,7 +741,7 @@ button.btn_offer{width:190px;height:70px}
 .list_info .txt_g{display:inline-block;margin-top:3px;line-height:26px;vertical-align:top}
 .list_noti{padding-top:28px}
 .list_noti li{font-size:14px;line-height:24px}
-.area_cont .txt_kakao{margin-top:58px;padding-top:17px;border-top:1px solid #e6e6e6;font-size:14px;line-height:22px}
+.area_cont .txt_kakao{margin-top:58px;padding-top:12px;border-top:1px solid #e6e6e6;font-size:12px;line-height:22px} /* 2017-07-14 */
 .area_cont .info_btn .btn_step{width:158px;margin-top:53px;text-align:left}
 .area_cont .info_btn .btn_step .ico_arr{float:right;margin-left:0}
 
@@ -758,8 +750,8 @@ button.btn_offer{width:190px;height:70px}
 .tbl_info .cell_chk .box_radioinp{margin-left:34px}
 .tbl_info .cell_chk .box_radioinp:first-child{margin-left:0}
 .tbl_info .cell_chk .txt_info{padding-top:2px}
-.tbl_info .cell_course{overflow:hidden;padding:17px 0 21px;border-top:1px solid #d4d4d4}
-.tbl_info .cell_course.fst{padding-top:6px;border-top:0 none}
+.tbl_info .cell_course{overflow:hidden;padding:17px 0 3px;border-top:1px solid #d4d4d4}/* KAKAOCORP-87 */
+.tbl_info .cell_course.fst{padding:6px 0 21px;border-top:0 none}
 .tbl_info .cell_course + .txt_info{margin-top:-10px;padding-top:0}
 .tbl_info .choice_tit{float:left;width:265px}
 .tbl_info .choice_tit .tit_course{display:block}
@@ -776,8 +768,8 @@ button.btn_offer{width:190px;height:70px}
 .tbl_info .cell_time .box_radioinp:first-child{margin-left:0}
 .tbl_info .pack_visitor .box_tf{width:52px}
 .tit_item{display:block;padding-top:40px;line-height:30px;color:#1e1e1e}
-.tit_item2{padding-top:73px}  /* 2017-06-30 추가 */
-.tit_item.fst{padding-top:56px} /* 2017-06-30 */
+.tit_item.fst{padding-top:87px} /* KAKAOCORP-59 */ /* 2017-06-30 */
+.tit_item2{padding-top:73px} /* 2017-06-30 추가 */
 .tit_item + .tbl_info{margin-top:16px}
 .area_cont .emph_travel{display:block;padding-top:25px;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif;color:#1e1e1e}
 .area_cont .list_travel{padding:11px 0 0 2px;font-size:14px;line-height:24px}
@@ -796,17 +788,14 @@ button.btn_offer{width:190px;height:70px}
 .map_cont .map_info .list_address dd{overflow:hidden}
 
 
-
 /****************************** 투자정보 ******************************/
-
-
 /* 투자정보 테이블 */
 .tbl_chart .ta_left .inner_cell{padding-left:40px}
 .tbl_public thead .ta_left{padding-left:235px}
 .tbl_public .ta_left .inner_cell{padding-right:60px;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif}
 .tbl_public .txt_public{position:relative;display:inline-block;max-width:100%;padding-right:17px;vertical-align:top}
 .tbl_public .ico_new{position:absolute;top:5px;right:0;width:11px;height:11px;background-position:-100px -50px}
-/* .tbl_coverage{float:left;width:50%} */
+.tbl_coverage{overflow:hidden}/* KAKAOCORP-136 추가 */
 .tbl_coverage tbody th{color:#666}
 .tbl_coverage .ta_left .inner_cell{padding-left:40px}
 .stock_comm{display:block;overflow:visible;width:auto;clear:both;*zoom:1}
@@ -857,6 +846,7 @@ button.btn_offer{width:190px;height:70px}
 .box_irguide .txt_irguide{margin-top:28px}
 .box_irguide + .box_checkinp{display:block;margin-top:20px} */
 
+.tbl_info{clear:both}/* KAKAOCORP-136 추가 */
 .tbl_info th{font-weight:normal;color:#1e1e1e;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif;background-color:#f7f7f7}
 .tbl_info td{font-size:16px}
 .tbl_info th.top_align{padding-top:23px;vertical-align:top}
@@ -898,11 +888,10 @@ button.btn_offer{width:190px;height:70px}
 .tbl_info .box_on .lab_file{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
 .tbl_info .box_on .list_fileadd{display:block}
 
-
-.info_reserve{display:inline-block;width:100%;margin-top:57px;vertical-align:top} /* 2017-06-30 */
+.info_reserve{display:inline-block;width:100%;margin-top:87px;vertical-align:top} /* KAKAOCORP-59 */ /* 2017-06-30 */
 .info_reserve .pack_info{float:left}
 .info_reserve .tit_info{display:block;font-size:18px;line-height:28px;color:#1e1e1e}
-.info_reserve .txt_info{display:block;/* margin-bottom:26px; */line-height:28px}
+.info_reserve .txt_info{display:block;line-height:28px}
 .info_reserve .tit_info + .txt_info{padding-top:18px}
 .info_reserve .pack_btn{float:right;margin-top:-6px}
 .info_reserve .pack_btn .btn_offer{width:142px;height:38px;line-height:38px}
@@ -926,7 +915,7 @@ button.btn_offer{width:190px;height:70px}
 .tbl_calendar .date_sat{color:#0000ff}
 .tbl_calendar .list_reserve{font-size:14px;line-height:23px}
 .tbl_calendar .list_reserve li{position:relative}
-.tbl_calendar .list_reserve .name_g{display:block;font-weight:bold;/*font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif*/;color:#1e1e1e;cursor:default}
+.tbl_calendar .list_reserve .name_g{display:block;font-weight:bold;color:#1e1e1e;cursor:default}
 .tbl_calendar .list_reserve .link_g{display:inline-block;color:#1e1e1e;text-decoration:none;text-decoration:underline;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif}
 .tbl_calendar .list_reserve .name_tooltip{display:none;overflow:hidden;position:absolute;z-index:10;top:26px;left:-5px;padding:8px 14px;border:1px solid #4d4d4d;font-size:14px;color:#1e1e1e;font-weight:bold;/*font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif;*/background-color:#fff;white-space:nowrap}
 .tbl_calendar .list_reserve .on .name_tooltip{display:block}
@@ -942,7 +931,6 @@ button.btn_offer{width:190px;height:70px}
 .list_irmeet .circle_item3 .tit_ir{color:#fff}
 .list_irmeet .tit_ir{display:block;margin:47px 0 10px;font-weight:bold;font-size:18px;line-height:30px}
 
-
 .subject_corp + .txt_info{display:block;padding-top:15px}
 .group_perform{margin-bottom:7px}
 .group_perform .btn_step .ico_download{margin:12px 0 0 30px}
@@ -955,8 +943,8 @@ button.btn_offer{width:190px;height:70px}
 .group_perform .opt_comm .box_opt{top:63px}
 .group_perform .link_selected .ico_arrow{position:static;width:12px;height:8px;margin:16px 0 0 36px;background-position: 0 -20px}
 .group_perform .link_selected:hover .ico_arrow{background-position:-130px -142px}
-.opt_open .link_selected .ico_arrow{background-position:-20px -20px}
-.opt_open .link_selected:hover .ico_arrow{background-position:-130px -132px}
+.group_perform .opt_open .link_selected .ico_arrow{background-position:-20px -20px}
+.group_perform .opt_open .link_selected:hover .ico_arrow{background-position:-130px -132px}
 .group_perform .list_opt li{padding:0;border-top:1px solid #1e1e1e}
 .group_perform .list_opt li:first-child{border-top:none}
 .group_perform .list_opt .link_option{position:relative;font-size:14px;color:#1e1e1e}
@@ -966,12 +954,7 @@ button.btn_offer{width:190px;height:70px}
 .group_perform .list_opt .link_option:hover{color:#fff}
 
 
-
-
 /****************************** 서비스 ******************************/
-
-
-/* #kakaoContent.cont_svc{padding-top:62px} */
 .cont_svc #mArticle{width:100%}
 
 /* 메인 */
@@ -979,8 +962,11 @@ button.btn_offer{width:190px;height:70px}
 .subtop_info .tit_corp{padding:0 40px 0 0}
 .subtop_info .desc_info{float:left;width:560px;padding-top:0}
 .subtop_info .area_cont .btn_step{float:right;margin-top:6px}/* 2017-06-30 */
-.wrap_svc{overflow:hidden;width:1160px;margin:0 auto}
+.wrap_svc{width:1160px;margin:0 auto}
+.wrap_svc:after{display:block;visibility:hidden;height:0;font-size:0;clear:both;content:''}
 .wrap_svc .area_tit > .opt_comm{width:160px;margin-top:72px}
+.wrap_svc .opt_comm .box_opt{max-height:316px}/* KAKAOCORP-136 추가 */
+.wrap_svc .opt_comm .inner_opt{max-height:306px}/* KAKAOCORP-136 추가 */
 .wrap_svc .list_svc{overflow:hidden;width:1000px;margin-left:-40px;padding-top:25px}/* 2017-06-30 */
 .wrap_svc .list_svc li{display:inline-block;width:260px;margin:55px 0 0 40px;vertical-align:top}/* 2017-06-30 */
 .wrap_svc .link_service{display:block;width:260px}
@@ -989,11 +975,9 @@ button.btn_offer{width:190px;height:70px}
 .wrap_svc .ico_new{width:11px;height:11px;margin:8px 0 0 3px;background-position:-100px -50px}/* 2017-06-30 */
 
 /* 상세 */
-/* .service_cont{overflow:hidden;width:1160px;margin:0 auto} */
-/* .behind_story .wrap_cont + .wrap_cont .tit_corp{padding-top:130px} */
 .subject_corp + .feature_slide{margin-top:20px}
+.data_info + .feature_slide{margin-top:60px}/* KAKAOCORP-59 추가 */
 .desc_emph + .feature_slide{margin-top:30px} /* 2017-06-30 */
-/* .area_cont .desc_feature{padding-top:40px} */
 .area_cont .emph_feature{display:block;padding-top:10px;font-size:14px;line-height:26px;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif;color:#1e1e1e}
 .area_cont .desc_emph{font-size:14px;color:#666}
 /* .feature_info{padding-top:26px} */
@@ -1014,7 +998,7 @@ button.btn_offer{width:190px;height:70px}
 .service_feature .area_cont .btn_step{margin-top:30px} /* 2017-06-30 */
 .wrap_feature .area_cont .btn_step{margin-top:24px}
 /* 비하인드 스토리 */
-/* .behind_story .area_cont .desc_info{padding-top:74px} */
+.cont_svc #mArticle.behind_story{width:1160px}
 .wrap_story{padding-top:40px} /* 2017-06-30 추가 */
 .area_cont .desc_quote{padding-top:45px;font-size:18px;line-height:30px;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif;color:#1e1e1e;text-align:center}
 .area_cont .desc_quote + .wrap_photo{padding-top:60px} /* 2017-06-30 추가*/
@@ -1038,8 +1022,6 @@ button.btn_offer{width:190px;height:70px}
 
 
 /****************************** 소셜임팩트 ******************************/
-
-
 /* .cont_social #mArticle{padding-bottom:0} KAKAOCORP-9 삭제 */
 /* 공통 - 블로그 */
 .wrap_photo{overflow:hidden;width:870px;padding-top:26px} /* 2017-06-30 */
@@ -1087,23 +1069,23 @@ button.btn_offer{width:190px;height:70px}
 .item_info{overflow:hidden;padding-top:40px}  /* 2017-06-30 */
 .item_info .info_cont{float:left;width:185px;margin-left:40px}
 .item_info .info_cont:first-child{margin-left:0}
-.info_cont .emph_tit{display:block;width:185px;height:185px;padding-top:80px;border:1px solid #1e1e1e;border-radius:185px;font-weight:bold;text-align:center;color:#1e1e1e;box-sizing:border-box}
+.info_cont .emph_tit{display:table-cell;width:185px;height:185px;padding:0 20px;border:1px solid #1e1e1e;border-radius:185px;font-weight:bold;text-align:center;color:#1e1e1e;vertical-align:middle;box-sizing:border-box}  /* KAKAOCORP-70 */  /* KAKAOCORP-46 */
 .info_cont .list_cont{padding-top:30px}
 .info_cont .list_cont li{position:relative;padding-left:10px;font-size:14px;line-height:26px} /* 2017-06-30 */
 .info_cont .list_cont li:before{position:absolute;top:11px;left:0;width:2px;height:2px;background-color:#666;content:''} /* 2017-06-30 */
 
 /* 교육산학 - kakao 클래스 */
 .list_feature{overflow:hidden;padding:60px 0;border-top:1px solid #e6e6e6}
-.list_feature li{float:left;width:220px;height:220px;margin-left:100px;padding-top:74px;border-radius:220px;font-size:18px;font-weight:bold;line-height:30px;color:#fff;text-align:center;background-color:#1e1e1e;box-sizing:border-box}  /* 2017-06-30 */
-
+.list_feature li{display:table;float:left;width:220px;height:220px;margin-left:100px;border-radius:220px;font-size:18px;font-weight:bold;line-height:30px;color:#fff;text-align:center;background-color:#1e1e1e;box-sizing:border-box}  /* 2017-06-30 */ /* KAKAOCORP-46 */
 .list_feature li:first-child{margin-left:0}
+.list_feature li .emph_tit{display:table-cell;padding:0 25px;font-weight:bold;vertical-align:middle} /*KAKAOCORP-46*/
 
 /* 지역상생 - 지역 사회 협력 */
 .wrap_project{padding-top:20px}/* KAKAOCORP-9 */
-.desc_info + .wrap_project{padding-top:0}
+/*.desc_info + .wrap_project{padding-top:0} KAKAOCORP-47 삭제 */
 .wrap_project .list_project{overflow:hidden;width:900px}
-.list_project li{float:left;width:260px;margin:40px 40px 0 0}  /* 2017-06-30 */
-.list_project .link_project{display:block;width:260px;height:305px} /* 2017-06-30 */
+.list_project li{float:left;width:260px;margin:30px 40px 0 0}  /* 2017-06-30 */ /* KAKAOCORP-47 */
+.list_project .link_project{display:block;width:260px;height:265px} /* 2017-06-30 */ /* KAKAOCORP-47 */
 .list_project .frame_g{display:block;width:260px;height:146px}  /* 2017-06-30 */
 .list_project .frame_g .img_thumb{width:100%}
 .list_project .tit_project{display:block;padding-top:30px;font-weight:bold;color:#1e1e1e}
@@ -1116,12 +1098,12 @@ button.btn_offer{width:190px;height:70px}
 .subtop_visual{position:relative;background:url(/resources/service/images/social/img_social1.png) no-repeat 50% 0;background-size:cover;background-color:#000}
 .subtop_visual .frame_g{position:absolute;top:0;left:0;width:100%;height:100%;background-color:#000;opacity:0.2;filter:alpha(opacity=20)}
 .subtop_visual .inner_visual{position:relative;width:1280px;height:494px;margin:0 auto} /* 2017-06-30 */
-.subtop_visual .desc_visual{position:absolute;z-index:10;top:71px;left:62px;font-size:30px;color:#fff;line-height:48px;font-weight:bold;text-shadow:1px 1px 1px #000}/* 2017-07-21 */ /* 2017-06-30 */
+.subtop_visual .desc_visual{position:absolute;z-index:10;top:71px;left:62px;font-size:30px;color:#fff;line-height:48px;font-weight:bold;text-shadow:0 1px 1px #000}/* KAKAOCORP-133 */ /* 2017-07-21 */
 .subtop_inven{overflow:hidden;width:1160px;margin:0 auto;padding-top:55px}/* KAKAOCORP-9 */
 .subtop_inven .inven_info{overflow:hidden;float:left;width:260px;padding-left:40px}
 .subtop_inven .inven_info:first-child{padding-left:0}
 .subtop_inven .inven_info .link_inven{display:block;overflow:hidden;color:#666}  /* 2017-06-30 */
-.subtop_inven .inven_info .tit_inven{color:#1e1e1e}
+.subtop_inven .inven_info .tit_inven{display:block;line-height:24px;color:#1e1e1e}/* KAKAOCORP-35_v1 */
 .subtop_inven .inven_info .desc_inven{margin:12px 0 26px;line-height:22px;font-size:14px;color:#666} /* KAKAOCORP-35 */ /* 2017-06-30 */
 .subtop_inven .inven_info .list_social{padding-top:26px}
 .inven_info .list_social li{font-size:14px;line-height:24px}
@@ -1135,10 +1117,8 @@ button.btn_offer{width:190px;height:70px}
 /* .withjeju_cont .inven_info .desc_inven{height:65px} KAKAOCORP-35 삭제 */
 
 /* 소셜임팩트 서비스 */
-/* .social_service .wrap_tab{padding-top:39px} */
-.social_service .list_tab .link_tab{font-size:20px}
-.wrap_tab .list_tab .on .link_tab, .wrap_tab .list_tab .link_tab:hover{font-weight:bold}
-/* .social_service .wrap_slide{margin-top:35px} */
+/* .social_service .list_tab .link_tab{font-size:20px} KAKAOCORP-59 삭제 */
+/* .wrap_tab .list_tab .on .link_tab, .wrap_tab .list_tab .link_tab:hover{font-weight:bold} KAKAOCORP-59 삭제 */
 .social_service .withkakao_info{float:left;width:761px;height:200px;padding-top:55px}
 .social_service .withkakao_info .ico_arr{width:6px;height:9px;margin:15px 0 0 32px;background:pink}
 .wrap_social{margin-top:60px;padding:60px 0;border-top:1px solid #e6e6e6}
@@ -1166,8 +1146,6 @@ button.btn_offer{width:190px;height:70px}
 
 
 /****************************** 고객지원 ******************************/
-
-
 #mArticle.info_top{width:100%}
 /* 검색 */
 .wrap_info{overflow:hidden;border-bottom:1px solid #e6e6e6}
@@ -1215,13 +1193,12 @@ button.btn_offer{width:190px;height:70px}
 .list_support .img_arrow{display:inline-block;width:6px;height:9px;margin-left:7px;background-color:#FFC0CB}
 
 /* 카카오계정 알아보기 - 상세 */
-.info_account .area_tit .tit_corp{padding-top:70px}/* 2017-06-30 */
 .info_account .wrap_cont + .wrap_cont{margin-top:0}
+.info_account .wrap_cont + .wrap_cont .tit_corp{padding-top:70px}/* KAKAOCORP-59 */ /* 2017-06-30 */
 .info_account .wrap_cont + .wrap_cont .area_cont{border-top:0 none}
-.area_cont .desc_account{padding-top:71px;line-height:26px;letter-spacing:-1px}/* 2017-06-30 */
-.area_cont .desc_account{padding-top:74px;line-height:26px}/* KAKAOCORP-95 */ /* 2017-06-30 */
+.wrap_cont .desc_account{padding-top:74px;line-height:26px}/* KAKAOCORP-95 */ /* 2017-06-30 */
+.tit_intro + .wrap_cont .desc_account{padding-top:87px}/* KAKAOCORP-59 추가 */
 .area_cont .answer_notice .desc_account{padding-top:55px} /* 2017-06-30 추가*/
-/* .area_cont .desc_account.fst{padding-top:75px} */
 .area_cont .desc_account .link_item{color:#3c64e6}
 .wrap_cont .list_account{margin-top:35px;border-top:2px solid #4d4d4d}/* 2017-06-30 */
 .list_account .link_notice{display:block;position:relative;padding:25px 80px 25px 0;border-bottom:1px solid #e6e6e6}
@@ -1240,13 +1217,6 @@ button.btn_offer{width:190px;height:70px}
 
 
 /****************************** 정책 ******************************/
-
-
-
-
-
-
-
 /* 오디오 팝업 */
 .kakao_popup{position:relative}
 .kakao_popup .popup_aod{background-repeat:no-repeat}
@@ -1275,15 +1245,14 @@ button.btn_offer{width:190px;height:70px}
 .popup_ir .tbl tr>td:first-child{border-left:0 none;text-align:center}
 .popup_ir .tbl .inner_cell{padding:5px 20px 7px;font-size:14px;color:#1e1e1e}
 .popup_ir .tit_register{display:block;float:left;width:96px;font-weight:normal;font-size:14px;line-height:20px;color:#1e1e1e;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif}
-.popup_ir .list_register{float:left;margin-top:1px;/*padding-bottom:73px;*/font-size:14px}
+.popup_ir .list_register{float:left;margin-top:1px;font-size:14px}
 .popup_ir .list_register li{line-height:22px}
-.popup_ir .wrap_btn{/*position:absolute;left:0;bottom:40px;*/width:100%;height:40px;padding-top:40px;text-align:center}
+.popup_ir .wrap_btn{width:100%;height:40px;padding-top:40px;text-align:center}
 .popup_ir .inner_btn{display:inline-block;margin:0 5px}
 .popup_ir .btn_offer{width:auto;height:auto}
 .popup_ir .txt_offer{display:block;width:98px;height:38px;line-height:38px}
 
 /* 투자정보 팝업 type2 */
-/*.popup_ir.popup_ir_type2{height:303px}*/
 .popup_ir.popup_ir_type2 .wrap_inp{margin-top:28px}
 .popup_ir.popup_ir_type2 .box_inp{width:348px}
 .popup_ir.popup_ir_type2 .btn_find{float:right}
@@ -1296,7 +1265,7 @@ button.btn_offer{width:190px;height:70px}
 .popup_ir .desc_confirm{margin-top:31px;font-size:14px;color:#1e1e1e;text-align:center}/* KAKAOCORP-95 */
 
 
-/* 레이어 */
+/****************************** 레이어 ******************************/
 /* 공통 */
 .layer_open{overflow:hidden}
 .dimmed_layer{display:none;position:fixed;left:0;top:0;z-index:1000;width:100%;height:100%;background:#000;opacity:0.2;filter:alpha(opacity=50)}
@@ -1307,14 +1276,14 @@ button.btn_offer{width:190px;height:70px}
 /* 투자정보 레이어 */
 .inner_comm_layer .cont_ir_layer{position:relative;overflow:hidden;width:460px;padding:52px 40px 32px;background:#fff;margin:0 auto} /* 2017-06-30 */
 .cont_ir_layer .tit_layer{display:block;font-weight:bold;font-size:18px;line-height:26px;color:#1e1e1e}
-.cont_ir_layer .desc_layer{/*padding-bottom:70px;*/font-size:16px;line-height:26px;text-align:center;color:#1e1e1e}
+.cont_ir_layer .desc_layer{font-size:16px;line-height:26px;text-align:center;color:#1e1e1e}
 .cont_ir_layer .txt_g{font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif}
 .cont_ir_layer .complete_tbl{overflow:hidden;margin:40px 0 40px;min-height:155px;border-top:2px solid #4d4d4d}
 .cont_ir_layer .tbl th{padding:15px 20px 14px;font-size:14px;border-bottom:1px solid #e6e6e6;background:#f7f7f7;color:#1e1e1e;text-align:left;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif}
 .cont_ir_layer .tbl tr>th:first-child{border-left:0 none}
 .cont_ir_layer .tbl td{border-bottom:1px solid #e6e6e6;text-align:left}
 .cont_ir_layer .tbl .inner_cell{padding:5px 20px 7px;font-size:14px;color:#1e1e1e}
-.cont_ir_layer .wrap_btn{/*position:absolute;left:0;bottom:60px*/width:100%;height:44px;margin-top:40px;padding-top:0;text-align:center}
+.cont_ir_layer .wrap_btn{width:100%;height:44px;margin-top:40px;padding-top:0;text-align:center}
 .cont_ir_layer .inner_btn{display:inline-block}
 .cont_ir_layer .btn_offer{width:auto;height:auto}
 .cont_ir_layer .btn_item{width:144px}
@@ -1328,8 +1297,8 @@ button.btn_offer{width:190px;height:70px}
 .inner_comm_layer.inner_ir_layer2 .desc_layer{margin-top:13px;padding-bottom:0;line-height:22px;text-align:left}/* KAKAOCORP-95 */
 
 /* 컨텐츠 드래그 컬러효과 */
-::-moz-selection{background:#ffee33}
-::selection{background:#ffee33}
+::-moz-selection{background:rgba(255,238,51,0.99)}
+::selection{background:rgba(255,238,51,0.99)}
 
 @media all and (max-width:1360px){
     .link_top{right:18px}/* KAKAOCORP-65 */
@@ -1345,7 +1314,7 @@ only screen and (min-device-pixel-ratio: 1.5){
 }
 
 /* KAKAOCORP-24 추가 시작 */
-/* 뷰페이지 - 구데이터 마이그레이션시 오버이딩 css */
+/* 뷰페이지 - 구데이터 마이그레이션시 오버라이딩 css */
 .view_body p{
     margin:0 !important;
     font-size:16px !important;
@@ -1388,7 +1357,7 @@ only screen and (min-device-pixel-ratio: 1.5){
 .tit_subject.fst{padding-top:53px}
 .link_policy{color:#3c64e6}
 .link_policy:hover{text-decoration:none}
-.link_policy2{color:#3c64e6}
+.link_policy2{color:#3c64e6} /* 삭제예정 */
 .txt_article{display:block;padding-top:80px}
 .wrap_terms{width:1160px;margin:0 auto;margin-top:80px;border-top:2px solid #4d4d4d}
 .cont_policy .wrap_tab + .wrap_terms{margin-top:60px}
@@ -1445,6 +1414,7 @@ only screen and (min-device-pixel-ratio: 1.5){
 
 
 /* 권리침해신고안내 */
+.wrap_rights{margin-top:45px;border-top:none}
 .wrap_rights .tit_policy{margin-top:55px;border-top:1px solid #e6e6e6}
 .wrap_rights .tit_policy.fst{margin-top:0;border-top:0 none}
 .wrap_rights .rights_thumb{margin-top:15px;padding:60px 59px;border:1px solid #1e1e1e} /* 2017-06-30 수정 */
@@ -1472,7 +1442,7 @@ only screen and (min-device-pixel-ratio: 1.5){
 
 /* 약관및정책 - 새창*/
 .policy_separate .wrap_terms{margin-top:100px}
-.policy_separate .desc_g.fst{margin-top:90px}  /* 2017-07-21 추가 */
+.policy_separate .desc_g.fst{margin-top:90px} /* 2017-07-21 추가 */
 /*.policy_separate .tit_policy + .desc_g{padding-top:100px} /* 2017-06-30  2017-07-21 삭제*/
 
 .separate_search{overflow:hidden}
@@ -1485,15 +1455,16 @@ only screen and (min-device-pixel-ratio: 1.5){
 .wrap_paging .btn_list{position:absolute;bottom:0;right:0;width:100px;height:40px;font-size:14px;line-height:38px;color:#fff;background-color:#4d4d4d;text-align:center;text-decoration:none;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif}
 .wrap_paging .btn_list:hover{background-color:#1e1e1e}
 
-/* 2017-07-21 추가 */
+/* 2017-07-21 삭제예정 */
 /* 탭메뉴 */
 .tab_policy{overflow:hidden;height:50px;margin-top:80px}
 .tab_policy + .txt_article{padding-top:40px}
 .tab_policy li{position:relative;float:left;width:165px;height:50px;text-align:center;line-height:48px}
+.tab_policy .lst{width:168px}
 .tab_policy .link_policy{display:block;margin-right:-1px;border:1px solid #d4d4d4;color:#666;font-size:14px}
 .tab_policy .link_policy:hover{color:#1e1e1e;font-weight:bold;text-decoration:underline}
-.tab_policy .link_policy.lst{width:168px}
 .tab_policy .on .link_policy{position:relative;color:#fff;background-color:#1e1e1e;border:1px solid #1e1e1e;z-index:99}
+/* 2017-07-21 삭제예정 */
 
 
 /* 메인푸터 */
@@ -1509,7 +1480,8 @@ only screen and (min-device-pixel-ratio: 1.5){
 .info_svc .link_relation .ico_new{margin-top:8px}
 .info_open .list_relation{display:block}
 .info_open .ico_arr{background-position:-285px -25px}
-.info_open .dlnk_info,.info_open .dlnk_info .ico_arr{background-position:-285px -35px;color:#fff}
+.info_open .dlnk_info{color:#fff}
+.info_open .dlnk_info .ico_arr{background-position:-285px -35px}
 .info_svc .list_relation .ico_direct{width:13px;height:13px;margin:7px 0 0 6px;background-position:-155px 0}
 .foot_kakao .dlnk_info:hover .ico_arr{background-position:-285px -35px}
 
@@ -1529,11 +1501,13 @@ only screen and (min-device-pixel-ratio: 1.5){
 
 .tab_policy + .tit_policy{padding-top:96px}
 .cont_policy .tit_policy + .wrap_terms{margin-top:60px}
-
-/* 권리침해신고안내 */
-.wrap_rights{margin-top:45px;border-top:none}
-
 /* 2017-07-21 추가 종료 */
+
+
+
+
+
+
 
 /* 슬라이드 */
 .wrap_slide .list_wrap {
@@ -1543,6 +1517,7 @@ only screen and (min-device-pixel-ratio: 1.5){
 }
 .wrap_slide .list_slide img {
     display: block;
+    margin: 0 auto;
     /*width: 100%;*/
 }
 .wrap_slide .list_slide .thumb_slide {
@@ -1559,15 +1534,15 @@ only screen and (min-device-pixel-ratio: 1.5){
     z-index: 20;
 }
 .wrap_slide .btn_page {
-    z-index: 20;
+    z-index: 30;
 }
 
-.main_slide .list_slide,
-.svctop_slide .list_slide,
-.svc_slide .list_slide
-{
-    padding-top:0
-}
+/*.main_slide .list_slide,*/
+/*.svctop_slide .list_slide,*/
+/*.svc_slide .list_slide*/
+/*{*/
+    /*padding-top:0*/
+/*}*/
 
 /* slide */
 .slide .list_slide {
@@ -1581,7 +1556,95 @@ only screen and (min-device-pixel-ratio: 1.5){
 }
 
 .slide .list_slide .thumb_slide {
-    position: static;
+    position: relative;
+}
+
+/* fade */
+.fade .list_slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fade .list_slide li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .5s;
+    width: 100%;
+    height: 100%;
+}
+
+.fade .on {
+    opacity: 1!important;
+    z-index: 20;
+}
+
+/* fade */
+.svcFade .list_slide {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/*.fade .list_slide{padding-top:56.25%}!* 2017-07-03 *!*/
+
+.has_disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
+
+/* 슬라이드 */
+.wrap_slide .list_wrap {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.wrap_slide .list_slide img {
+    display: block;
+    margin: 0 auto;
+    /*width: 100%;*/
+}
+.wrap_slide .list_slide .thumb_slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+}
+.wrap_slide .info_page {
+    right: 10px;
+    bottom: 0px;
+    z-index: 20;
+}
+.wrap_slide .btn_page {
+    z-index: 30;
+}
+
+/*.main_slide .list_slide,*/
+/*.svctop_slide .list_slide,*/
+/*.svc_slide .list_slide*/
+/*{*/
+    /*padding-top:0*/
+/*}*/
+
+/* slide */
+.slide .list_slide {
+    width: 300%;
+    height: 100%;
+}
+
+.slide .list_slide li {
+    float: left;
+    height: 100%;
+}
+
+.slide .list_slide .thumb_slide {
+    position: relative;
 }
 
 /* fade */

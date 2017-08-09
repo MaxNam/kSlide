@@ -77,7 +77,7 @@
             "useResponsive": false,
             "useSnap": false, // 이미지가 1장일 경우 스냅효과 비활성화, TODO 2장 이상일 경우 각 선언부에서 활성화 해야함
             "useTool": true,
-            "type": "default",
+            "type": "fade",
             "changedCallback": null,
             "imgWidth": 0, // 이미지 사이즈만 따로 조정 (img tag 사용) defaults.width는 배경 (색이 들어감)
             "imgHeight": 0 // 이미지 사이즈만 따로 조정 (img tag 사용) defaults.width는 배경 (색이 들어감)
@@ -261,14 +261,6 @@
                     if(!isImgChanging) {
                         clickedDirection('next');
                     }
-                });
-
-                $(window).on('orientationchange', function(){
-                    getHeight(function(height) {
-                        $el.css({
-                            "height": height + 'px'
-                        });
-                    }, true);
                 });
 
                 if(settings.useSnap) {
@@ -470,63 +462,16 @@
                 }
             }
 
-            function getHeight(callback, isLoad) {
-                var $img = $('<img src="' + settings.images[0] + '" />');
-                if(!(callback && typeof callback === 'function')) {
-                    return;
-                }
-                if(isLoad) {
-                    callback(getTestImgHeight($img));
-                } else {
-                    $img.load(function() {
-                        callback(getTestImgHeight($img));
-                    });
-                }
-                return;
+            render();
+            bindEvents();
+
+            if(settings.type === 'slide') {
+                var cssPrefix = getCssPrefix();
+                changeSlide('', true);
             }
 
-            function getTestImgHeight($img) {
-                var height = 0;
-                $img.css({
-                    "position": "absoulte",
-                    "width": "100%",
-                    "visibility": "hidden"
-                });
-                $(self).append($img);
-                height = $img.outerHeight();
-                if($(self).hasClass('main_slide')) {
-                    height = height * 1.77;
-                } else if($(self).hasClass('svctop_slide')) {
-                    height = height * 1.38
-                }
-                $img.remove();
-                return height;
-            }
-
-            if(settings.height === '100%' || (settings.height === '100%' && settings.imgHeight)) {
-                getHeight(function(height) {
-                    $(self).css({
-                        "height": (settings.imgHeight ? window.innerWidth : height) + 'px'
-                    });
-                    start();
-                });
-            } else {
-                start();
-            }
-
-            var cssPrefix;
-            function start() {
-                render();
-                bindEvents();
-
-                if(settings.type === 'slide') {
-                    cssPrefix = getCssPrefix();
-                    changeSlide('', true);
-                }
-
-                if(settings.useAutoChange) {
-                    autoChange();
-                }
+            if(settings.useAutoChange) {
+                autoChange();
             }
 
         });
