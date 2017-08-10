@@ -34,7 +34,7 @@ $('#slide').kSlide({
 ```
  images(Array) - 이미지 url
  
- type(String) - 이미지 타입 (fade, slide) (default: 'fade')
+ type(String) - 이미지 타입 (default, fade, slide) (default: 'default')
  
  width(Number, String) - 이미지 width 값 (default: 100%)
  
