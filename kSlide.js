@@ -1,3 +1,4 @@
+
 // jquery kSlide
 (function($) {
     'use strict';
@@ -263,13 +264,15 @@
                     }
                 });
 
-                $(window).on('orientationchange', function(){
-                    getHeight(function(height) {
-                        $el.css({
-                            "height": height + 'px'
-                        });
-                    }, true);
-                });
+                if(responsiveSlide()) {
+                    $(window).on('orientationchange resize', function(){
+                        getHeight(function(height) {
+                            $el.css({
+                                "height": height + 'px'
+                            });
+                        }, true);
+                    });
+                }
 
                 if(settings.useSnap) {
                     onSnap();
@@ -475,13 +478,13 @@
                 if(!(callback && typeof callback === 'function')) {
                     return;
                 }
-                if(isLoad) {
-                    callback(getTestImgHeight($img));
-                } else {
+                // if(isLoad) {
+                //     callback(getTestImgHeight($img));
+                // } else {
                     $img.load(function() {
                         callback(getTestImgHeight($img));
                     });
-                }
+                // }
                 return;
             }
 
@@ -503,7 +506,11 @@
                 return height;
             }
 
-            if(settings.height === '100%' || (settings.height === '100%' && settings.imgHeight)) {
+            function responsiveSlide() {
+                return settings.height === '100%' || (settings.height === '100%' && settings.imgHeight);
+            }
+
+            if(responsiveSlide()) {
                 getHeight(function(height) {
                     $(self).css({
                         "height": (settings.imgHeight ? window.innerWidth : height) + 'px'
