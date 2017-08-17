@@ -20,9 +20,10 @@ $('#slide').kSlide({
   "useTransition": true,
   "useAnimation3D": true,
   "useAutoChange": false,
-  "useResponsive": false,
   "useSnap": true,
   "type": "fade", //slide, fade
+  "expandHeightRate": 0,
+  "reduceHeightRate": 0,
   "changedCallback": function(self, pageIndex) {
     console.log('pageIndex===', pageIndex);
   }
@@ -33,34 +34,36 @@ $('#slide').kSlide({
 ## 옵션
 ```
  images(Array) - 이미지 url
- 
+
  type(String) - 이미지 타입 (fade, slide) (default: 'fade')
- 
+
  width(Number, String) - 이미지 width 값 (default: 100%)
- 
+
  height(Number, String) - 이미지 height 값 (default: 100%)
- 
+
  useTransition(Boolean) - transition 사용여부 (default: false, 하위브라우져는 자동 fale)
- 
+
  useAnimation3D(Boolean) - 애니메이션 3d 사용여부 (default: false, 3D 적용 안되는 브라우져는 자동 false)
- 
+
  useAutoChange(Boolean) - 이미지 자동 체인지 (default: false)
- 
+
  showDuration(Number) - (type = fade && useAutoChange = true)일때 이미지 교차하는 시간 (default: 1)
- 
- useResponsive(Boolean) - 이미지 반응형 할지 여부 (default: false)
 
  useSnap(Boolean) - 스냅이벤트 사용여부 (default: true)
- 
+
  useTool(Boolean) - 좌우 화살표 사용여부 (default: true)
- 
+
  changedCallback(function) - 해당 컴포넌트 rendering 끝나고 callback함수
- 
- 
+
+ expandHeightRate(Number) - 이미지영역 height 확대 비율 값
+
+ reduceHeightRate(Number) - 이미지영역 height 축소 비율 값
+
+
  // 배경색 + 이미지 타입
- 
+
  imgWidth(Number,String) - 이미지 사이즈만 따로 조정 (img tag 사용) width는 배경 (색이 들어감) (default: 0)
- 
+
  imgHeight(Number,String) - 이미지 사이즈만 따로 조정 (img tag 사용) height는 배경 (색이 들어감) (default: 0)
 
 ```

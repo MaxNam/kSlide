@@ -1,4 +1,3 @@
-
 // jquery kSlide
 (function($) {
     'use strict';
@@ -51,8 +50,8 @@
         }
         // create our test div element
         var div = document.createElement('div'),
-            // css transition properties
-            props = ['WebkitPerspective', 'MozPerspective', 'OPerspective', 'msPerspective', 'perspective'];
+          // css transition properties
+          props = ['WebkitPerspective', 'MozPerspective', 'OPerspective', 'msPerspective', 'perspective'];
         // test for each property
         for (var i = 0; i < props.length; i++) {
             if (div.style[props[i]] !== undefined) {
@@ -70,18 +69,22 @@
     $.fn.kSlide = function(options) {
         var defaults = {
             "images": [],
+            "altText": "",
             "width": "100%",
             "height": "100%",
             "useTransition": false,
             "useAnimation3D": false,
             "useAutoChange": false,
-            "useResponsive": false,
+            "useResponsive": false, // 사용안함....
             "useSnap": false, // 이미지가 1장일 경우 스냅효과 비활성화, TODO 2장 이상일 경우 각 선언부에서 활성화 해야함
             "useTool": true,
             "type": "default",
+            "isAccessibility": true,
             "changedCallback": null,
             "imgWidth": 0, // 이미지 사이즈만 따로 조정 (img tag 사용) defaults.width는 배경 (색이 들어감)
-            "imgHeight": 0 // 이미지 사이즈만 따로 조정 (img tag 사용) defaults.width는 배경 (색이 들어감)
+            "imgHeight": 0, // 이미지 사이즈만 따로 조정 (img tag 사용) defaults.width는 배경 (색이 들어감)
+            "expandHeightRate": 0,
+            "reduceHeightRate": 0
         }
 
         if(options.useTransition && supportTransition()) {
@@ -113,7 +116,7 @@
             }
             var isBindingTransition = false;
             $(self).css({
-                "width": settings.useResponsive ? '' : settings.width,
+                "width": settings.width,
                 "height": settings.height
             });
 // render ----
@@ -137,9 +140,9 @@
                 $slideBox.empty();
                 for(var i = 0; i < 3; i++) {
                     var $li = $('<li></li>');
-                    if(settings.useResponsive || settings.imgWidth || settings.imgHeight) {
+                    if(settings.imgWidth || settings.imgHeight) {
                         var $thumbSlide = $('<div class="thumb_slide"></div>');
-                        var $imgThumb = i ? $('<img class="img_thumb" src="'+ settings.images[i - 1] + '">') : $('<img class="img_thumb" src="' + settings.images[settings.images.length - 1] + '">');
+                        var $imgThumb = i ? $('<img class="img_thumb" src="'+ settings.images[i - 1] + '" alt="' + settings.altText + ' ">') : $('<img class="img_thumb" src="' + settings.images[settings.images.length - 1] + '" alt="' + settings.altText + ' ">');
                         if(settings.imgWidth || settings.imgHeight) {
                             $imgThumb.css({ "width": settings.imgWidth, "height": settings.imgHeight, "padding": (settings.height - settings.imgHeight) / 2 });
                         }
@@ -264,14 +267,19 @@
                     }
                 });
 
-                if(responsiveSlide()) {
+                if(isResponsive()) {
                     $(window).on('orientationchange resize', function(){
                         getHeight(function(height) {
                             $el.css({
-                                "height": height + 'px'
+                                "height": (settings.imgHeight ? window.innerWidth : height) + 'px'
                             });
                         }, true);
                     });
+                }
+
+                if(settings.isAccessibility && settings.useAutoChange) {
+                    $(self).on('focus', 'a', clearTimer);
+                    $(self).on('focus', 'button', clearTimer);
                 }
 
                 if(settings.useSnap) {
@@ -420,14 +428,14 @@
                             isChange = true;
                         } else {
                             $.when(bindAnimateStart($this, {"opacity": 0}), bindAnimateStart($next, {"opacity": 1}))
-                                .done(function() {
-                                    $this.removeClass('on');
-                                    $next.addClass('on');
-                                    isChange = true;
-                                    setTimeout(function() {
-                                        bindAnimateEnd(direction);
-                                    }, 100);
-                                });
+                              .done(function() {
+                                  $this.removeClass('on');
+                                  $next.addClass('on');
+                                  isChange = true;
+                                  setTimeout(function() {
+                                      bindAnimateEnd(direction);
+                                  }, 100);
+                              });
                         }
                     }
                 });
@@ -449,10 +457,10 @@
                 } else {
                     if(direction) {
                         $.when(bindAnimateStart($slideBox, {"left": (currentDirectionValue ? "-200%" : 0)}))
-                            .done(function() {
-                                $slideBox.css("left", "-100%");
-                                bindAnimateEnd(direction);
-                            });
+                          .done(function() {
+                              $slideBox.css("left", "-100%");
+                              bindAnimateEnd(direction);
+                          });
                     } else {
                         // setting.useTransition === false 일때 최초실행
                         $slideBox.css("left", '-100%');
@@ -478,39 +486,39 @@
                 if(!(callback && typeof callback === 'function')) {
                     return;
                 }
-                // if(isLoad) {
-                //     callback(getTestImgHeight($img));
-                // } else {
-                    $img.load(function() {
-                        callback(getTestImgHeight($img));
-                    });
-                // }
+                $img.load(function() {
+                    callback(getTestImgHeight($img));
+                });
                 return;
             }
 
             function getTestImgHeight($img) {
                 var height = 0;
-                $img.css({
-                    "position": "absoulte",
-                    "width": "100%",
-                    "visibility": "hidden"
-                });
-                $(self).append($img);
-                height = $img.outerHeight();
-                if($(self).hasClass('main_slide')) {
-                    height = height * 1.77;
-                } else if($(self).hasClass('svctop_slide')) {
-                    height = height * 1.38
+                if(!(settings.expandHeightRate || settings.reduceHeightRate)){
+                    $img.css({
+                        "position": "absoulte",
+                        "width": "100%",
+                        "visibility": "hidden"
+                    });
+                    $(self).append($img);
+                    height = $img.outerHeight();
+                    $img.remove();
+                } else {
+                    height = window.innerWidth;
+                    if(settings.expandHeightRate) {
+                        height = height * settings.expandHeightRate;
+                    } else if(settings.reduceHeightRate) {
+                        height = height * settings.reduceHeightRate;
+                    }
                 }
-                $img.remove();
                 return height;
             }
 
-            function responsiveSlide() {
+            function isResponsive() {
                 return settings.height === '100%' || (settings.height === '100%' && settings.imgHeight);
             }
 
-            if(responsiveSlide()) {
+            if(isResponsive()) {
                 getHeight(function(height) {
                     $(self).css({
                         "height": (settings.imgHeight ? window.innerWidth : height) + 'px'
